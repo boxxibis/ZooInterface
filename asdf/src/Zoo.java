@@ -57,7 +57,7 @@ public class Zoo extends JPanel
 
     public Zoo() {
         ImageIcon leftButtonIcon = new ImageIcon(new File("images/narwhal.jpg").getAbsolutePath());
-        ImageIcon middleButtonIcon = createImageIcon("images/middle.gif");
+        ImageIcon middleButtonIcon = new ImageIcon(new File("images/NyanCat.jpg").getAbsolutePath());
         ImageIcon rightButtonIcon = createImageIcon("images/left.gif");
 
         b1 = new JButton("Narwhal", leftButtonIcon);
