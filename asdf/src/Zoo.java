@@ -57,8 +57,8 @@ public class Zoo extends JPanel
 
     public Zoo() {
         ImageIcon leftButtonIcon = new ImageIcon(new File("images/narwhal.jpg").getAbsolutePath());
-        ImageIcon middleButtonIcon = new ImageIcon(new File("images/NyanCat.jpg").getAbsolutePath());
-        ImageIcon rightButtonIcon = createImageIcon("images/left.gif");
+        ImageIcon middleButtonIcon = new ImageIcon(new File("images/NYAN_CAT.jpg").getAbsolutePath());
+        ImageIcon rightButtonIcon = new ImageIcon(new File("images/mouse.jpg").getAbsolutePath());
 
         b1 = new JButton("Narwhal", leftButtonIcon);
         b1.setVerticalTextPosition(AbstractButton.CENTER);
@@ -66,16 +66,15 @@ public class Zoo extends JPanel
         b1.setMnemonic(KeyEvent.VK_D);
         //b1.setActionCommand("disable");
 
-        b2 = new JButton("Middle button", middleButtonIcon);
+        b2 = new JButton("Nyan Cat", middleButtonIcon);
         b2.setVerticalTextPosition(AbstractButton.BOTTOM);
         b2.setHorizontalTextPosition(AbstractButton.CENTER);
         b2.setMnemonic(KeyEvent.VK_M);
 
-        b3 = new JButton("Enable middle button", rightButtonIcon);
-        //Use the default text position of CENTER, TRAILING (RIGHT).
-        b3.setMnemonic(KeyEvent.VK_E);
-        //b3.setActionCommand("enable");
-        //b3.setEnabled(true);
+        b3 = new JButton("Mouse", rightButtonIcon);
+        b3.setVerticalTextPosition(AbstractButton.BOTTOM);
+        b3.setHorizontalTextPosition(AbstractButton.TRAILING);
+        b3.setMnemonic(KeyEvent.VK_M);
 
         //Listen for actions on buttons 1 and 3.
         b1.addActionListener(this);
