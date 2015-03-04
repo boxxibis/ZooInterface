@@ -56,11 +56,13 @@ public class Zoo extends JPanel
     protected JButton b1, b2, b3;
 
     public Zoo() {
-        ImageIcon leftButtonIcon = new ImageIcon(new File("images/narwhal.jpg").getAbsolutePath());
+        ImageIcon importNarwhal = new ImageIcon(new File("images/narwhal.jpg").getAbsolutePath());
         ImageIcon middleButtonIcon = new ImageIcon(new File("images/NYAN_CAT.jpg").getAbsolutePath());
         ImageIcon rightButtonIcon = new ImageIcon(new File("images/mouse.jpg").getAbsolutePath());
-
-        b1 = new JButton("Narwhal", leftButtonIcon);
+        
+        Image sizingNarwhal = importNarwhal.getImage().getScaledInstance(565,565, java.awt.Image.SCALE_SMOOTH);
+        ImageIcon narwhal = new ImageIcon(sizingNarwhal);
+        b1 = new JButton("Narwhal", narwhal);
         b1.setVerticalTextPosition(AbstractButton.CENTER);
         b1.setHorizontalTextPosition(AbstractButton.LEADING); //aka LEFT, for left-to-right locales
         b1.setMnemonic(KeyEvent.VK_D);
