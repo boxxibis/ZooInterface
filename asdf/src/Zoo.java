@@ -57,23 +57,27 @@ public class Zoo extends JPanel
 
     public Zoo() {
         ImageIcon importNarwhal = new ImageIcon(new File("images/narwhal.jpg").getAbsolutePath());
-        ImageIcon middleButtonIcon = new ImageIcon(new File("images/NYAN_CAT.jpg").getAbsolutePath());
-        ImageIcon rightButtonIcon = new ImageIcon(new File("images/mouse.jpg").getAbsolutePath());
+        ImageIcon importNyanCat = new ImageIcon(new File("images/NYAN_CAT.jpg").getAbsolutePath());
+        ImageIcon importMouse = new ImageIcon(new File("images/mouse.jpg").getAbsolutePath());
         
-        Image sizingNarwhal = importNarwhal.getImage().getScaledInstance(565,565, java.awt.Image.SCALE_SMOOTH);
+        Image sizingNarwhal = importNarwhal.getImage().getScaledInstance(100,100, java.awt.Image.SCALE_SMOOTH);
         ImageIcon narwhal = new ImageIcon(sizingNarwhal);
         b1 = new JButton("Narwhal", narwhal);
         b1.setVerticalTextPosition(AbstractButton.CENTER);
         b1.setHorizontalTextPosition(AbstractButton.LEADING); //aka LEFT, for left-to-right locales
         b1.setMnemonic(KeyEvent.VK_D);
         //b1.setActionCommand("disable");
-
-        b2 = new JButton("Nyan Cat", middleButtonIcon);
+        
+        Image sizingNyanCat = importNyanCat.getImage().getScaledInstance(100,100, java.awt.Image.SCALE_SMOOTH);
+        ImageIcon NyanCat = new ImageIcon(sizingNyanCat);
+        b2 = new JButton("Nyan Cat", NyanCat);
         b2.setVerticalTextPosition(AbstractButton.BOTTOM);
         b2.setHorizontalTextPosition(AbstractButton.CENTER);
         b2.setMnemonic(KeyEvent.VK_M);
-
-        b3 = new JButton("Mouse", rightButtonIcon);
+        
+        Image sizingMouse = importMouse.getImage().getScaledInstance(100,100, java.awt.Image.SCALE_SMOOTH);
+        ImageIcon mouse = new ImageIcon(sizingMouse);
+        b3 = new JButton("Mouse", mouse);
         b3.setVerticalTextPosition(AbstractButton.BOTTOM);
         b3.setHorizontalTextPosition(AbstractButton.TRAILING);
         b3.setMnemonic(KeyEvent.VK_M);
