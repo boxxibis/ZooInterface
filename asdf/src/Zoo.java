@@ -53,17 +53,18 @@ import java.io.IOException;
  */
 public class Zoo extends JPanel
                         implements ActionListener {
-    protected JButton b1, b2, b3;
+    protected JButton b1, b2, b3, b4;
 
     public Zoo() {
         ImageIcon importNarwhal = new ImageIcon(new File("images/narwhal.jpg").getAbsolutePath());
         ImageIcon importNyanCat = new ImageIcon(new File("images/NYAN_CAT.jpg").getAbsolutePath());
         ImageIcon importMouse = new ImageIcon(new File("images/mouse.jpg").getAbsolutePath());
+        ImageIcon importStingray = new ImageIcon(new File("images/stingray.jpg").getAbsolutePath());
         
         Image sizingNarwhal = importNarwhal.getImage().getScaledInstance(100,100, java.awt.Image.SCALE_SMOOTH);
         ImageIcon narwhal = new ImageIcon(sizingNarwhal);
         b1 = new JButton("Narwhal", narwhal);
-        b1.setVerticalTextPosition(AbstractButton.CENTER);
+        b1.setVerticalTextPosition(AbstractButton.TOP);
         b1.setHorizontalTextPosition(AbstractButton.LEADING); //aka LEFT, for left-to-right locales
         b1.setMnemonic(KeyEvent.VK_D);
         //b1.setActionCommand("disable");
@@ -71,16 +72,23 @@ public class Zoo extends JPanel
         Image sizingNyanCat = importNyanCat.getImage().getScaledInstance(100,100, java.awt.Image.SCALE_SMOOTH);
         ImageIcon NyanCat = new ImageIcon(sizingNyanCat);
         b2 = new JButton("Nyan Cat", NyanCat);
-        b2.setVerticalTextPosition(AbstractButton.BOTTOM);
+        b2.setVerticalTextPosition(AbstractButton.TOP);
         b2.setHorizontalTextPosition(AbstractButton.CENTER);
         b2.setMnemonic(KeyEvent.VK_M);
         
         Image sizingMouse = importMouse.getImage().getScaledInstance(100,100, java.awt.Image.SCALE_SMOOTH);
         ImageIcon mouse = new ImageIcon(sizingMouse);
         b3 = new JButton("Mouse", mouse);
-        b3.setVerticalTextPosition(AbstractButton.BOTTOM);
+        b3.setVerticalTextPosition(AbstractButton.TOP);
         b3.setHorizontalTextPosition(AbstractButton.TRAILING);
         b3.setMnemonic(KeyEvent.VK_M);
+        
+        Image sizingStingray = importStingray.getImage().getScaledInstance(100,100, java.awt.Image.SCALE_SMOOTH);
+        ImageIcon stingray = new ImageIcon(sizingStingray);
+        b4 = new JButton("Stingray", stingray);
+        b4.setVerticalTextPosition(AbstractButton.CENTER);
+        b4.setHorizontalTextPosition(AbstractButton.TRAILING);
+        b4.setMnemonic(KeyEvent.VK_M);
 
         //Listen for actions on buttons 1 and 3.
         b1.addActionListener(this);
@@ -94,6 +102,7 @@ public class Zoo extends JPanel
         add(b1);
         add(b2);
         add(b3);
+        add(b4);
     }
     //////////////////THIS IS WHERE ACTION COMMANDS ARE////////////////////////////
     public void actionPerformed(ActionEvent e) {
