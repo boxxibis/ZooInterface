@@ -31,7 +31,7 @@ final public class Animal {
 
 	}
 
-	private void go() {
+	void go() {
 
 		frame = new JFrame("Narwhal");
 

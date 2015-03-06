@@ -67,11 +67,9 @@ public class Zoo extends JPanel implements ActionListener {
 		ImageIcon narwhal = new ImageIcon(sizingNarwhal);
 		b1 = new JButton("Narwhal", narwhal);
 		b1.setVerticalTextPosition(AbstractButton.TOP);
-		b1.setHorizontalTextPosition(AbstractButton.LEADING); // aka LEFT, for
-																// left-to-right
-																// locales
+		b1.setHorizontalTextPosition(AbstractButton.LEADING);
 		b1.setMnemonic(KeyEvent.VK_D);
-		// b1.setActionCommand("disable");
+		b1.setActionCommand("openNarwhal");
 
 		Image sizingNyanCat = importNyanCat.getImage().getScaledInstance(100,
 				100, java.awt.Image.SCALE_SMOOTH);
@@ -80,6 +78,7 @@ public class Zoo extends JPanel implements ActionListener {
 		b2.setVerticalTextPosition(AbstractButton.TOP);
 		b2.setHorizontalTextPosition(AbstractButton.CENTER);
 		b2.setMnemonic(KeyEvent.VK_M);
+		b2.setActionCommand("openNyanCat");
 
 		Image sizingMouse = importMouse.getImage().getScaledInstance(100, 100,
 				java.awt.Image.SCALE_SMOOTH);
@@ -88,6 +87,7 @@ public class Zoo extends JPanel implements ActionListener {
 		b3.setVerticalTextPosition(AbstractButton.TOP);
 		b3.setHorizontalTextPosition(AbstractButton.TRAILING);
 		b3.setMnemonic(KeyEvent.VK_M);
+		b3.setActionCommand("openMouse");
 
 		Image sizingStingray = importStingray.getImage().getScaledInstance(100,
 				100, java.awt.Image.SCALE_SMOOTH);
@@ -96,10 +96,13 @@ public class Zoo extends JPanel implements ActionListener {
 		b4.setVerticalTextPosition(AbstractButton.CENTER);
 		b4.setHorizontalTextPosition(AbstractButton.TRAILING);
 		b4.setMnemonic(KeyEvent.VK_M);
+		b4.setActionCommand("openStingray");
 
 		// Listen for actions on buttons 1 and 3.
 		b1.addActionListener(this);
+		b2.addActionListener(this);
 		b3.addActionListener(this);
+		b4.addActionListener(this);
 
 		// b1.setToolTipText("Click this button to disable the middle button.");
 		// b2.setToolTipText("This middle button does nothing when you click it.");
@@ -115,14 +118,20 @@ public class Zoo extends JPanel implements ActionListener {
 	// ////////////////THIS IS WHERE ACTION COMMANDS
 	// ARE////////////////////////////
 	public void actionPerformed(ActionEvent e) {
-		if ("disable".equals(e.getActionCommand())) {
-			b2.setEnabled(true);
-			b1.setEnabled(true);
-			b3.setEnabled(true);
-		} else {
-			b2.setEnabled(true);
-			b1.setEnabled(true);
-			b3.setEnabled(true);
+		if ("openNarwhal".equals(e.getActionCommand())) {
+			new Animal().go();
+
+		}
+		if ("openNyanCat".equals(e.getActionCommand())) {
+
+		}
+
+		if ("openMouse".equals(e.getActionCommand())) {
+
+		}
+
+		if ("openStringray".equals(e.getActionCommand())) {
+
 		}
 	}
 
