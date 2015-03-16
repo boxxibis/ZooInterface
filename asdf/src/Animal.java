@@ -60,6 +60,7 @@ final public class Animal {
 		public void paintComponent(Graphics g) {
 			
 			Graphics2D g2d = (Graphics2D) g;
+			System.out.println("hi");
 
 			// Body
 
@@ -110,9 +111,10 @@ final public class Animal {
 
 	}
 
-	private void moveIt() {
+	public void moveIt() {
 
 		while (true) {
+			
 
 			/*if (k >= 375) {
 				right = false;
@@ -170,8 +172,8 @@ final public class Animal {
 
 				Thread.sleep(10);
 
-			} catch (Exception exc) {
-			}
+				} catch (Exception exc) {
+				}
 
 			frame.repaint();
 

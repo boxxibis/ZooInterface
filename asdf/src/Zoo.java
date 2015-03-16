@@ -119,7 +119,9 @@ public class Zoo extends JPanel implements ActionListener {
 	// ARE////////////////////////////
 	public void actionPerformed(ActionEvent e) {
 		if ("openNarwhal".equals(e.getActionCommand())) {
-			new Animal().go();
+			Animal animal = new Animal();
+			animal.go();
+			animal.frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
 		}
 		if ("openNyanCat".equals(e.getActionCommand())) {
@@ -153,17 +155,17 @@ public class Zoo extends JPanel implements ActionListener {
 	private static void createAndShowGUI() {
 
 		// Create and set up the window.
-		JFrame frame = new JFrame("Zoo");
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		JFrame ZFrame = new JFrame("Zoo");
+		ZFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		// Create and set up the content pane.
 		Zoo newContentPane = new Zoo();
 		newContentPane.setOpaque(true); // content panes must be opaque
-		frame.setContentPane(newContentPane);
+		ZFrame.setContentPane(newContentPane);
 
 		// Display the window.
-		frame.pack();
-		frame.setVisible(true);
+		ZFrame.pack();
+		ZFrame.setVisible(true);
 	}
 
 	public static void main(String[] args) {
