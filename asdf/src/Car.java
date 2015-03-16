@@ -28,8 +28,6 @@ public class Car {
 		Color randomColor1 = new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(255));
 		GradientPaint gp1 = new GradientPaint(0,0,randomColor,15,15,randomColor1,true);
 		g2d.setPaint(gp1);
-		System.out.println("X="+carX);
-		System.out.println("Y="+carY);
 		HydroCar.reset();
 		HydroCar.addPoint(carX, carY);//Bottom left of car
 		HydroCar.addPoint(carX+400, carY);//Bottom Right
