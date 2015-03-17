@@ -37,7 +37,7 @@ final public class MouseLOL<gtg> {
 
 	}
 
-	private void go() {
+	void go() {
 //Jframe structuring and attentiveness
 		frame = new JFrame("Test");
 

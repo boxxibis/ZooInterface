@@ -129,7 +129,7 @@ public class Zoo extends JPanel implements ActionListener {
 		}
 
 		if ("openMouse".equals(e.getActionCommand())) {
-
+			new MouseLOL().go();
 		}
 
 		if ("openStringray".equals(e.getActionCommand())) {
