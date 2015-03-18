@@ -27,9 +27,7 @@
  * LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
  * NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */ 
-
-
+ */
 
 import javax.imageio.ImageIO;
 import javax.swing.AbstractButton;
@@ -51,102 +49,132 @@ import java.io.IOException;
  *   images/middle.gif
  *   images/left.gif
  */
-public class Zoo extends JPanel
-                        implements ActionListener {
-    protected JButton b1, b2, b3;
+public class Zoo extends JPanel implements ActionListener {
+	protected JButton b1, b2, b3, b4;
 
-    public Zoo() {
-        ImageIcon importNarwhal = new ImageIcon(new File("images/narwhal.jpg").getAbsolutePath());
-        ImageIcon importNyanCat = new ImageIcon(new File("images/NYAN_CAT.jpg").getAbsolutePath());
-        ImageIcon importMouse = new ImageIcon(new File("images/mouse.jpg").getAbsolutePath());
-        
-        Image sizingNarwhal = importNarwhal.getImage().getScaledInstance(100,100, java.awt.Image.SCALE_SMOOTH);
-        ImageIcon narwhal = new ImageIcon(sizingNarwhal);
-        b1 = new JButton("Narwhal", narwhal);
-        b1.setVerticalTextPosition(AbstractButton.CENTER);
-        b1.setHorizontalTextPosition(AbstractButton.LEADING); //aka LEFT, for left-to-right locales
-        b1.setMnemonic(KeyEvent.VK_D);
-        //b1.setActionCommand("disable");
-        
-        Image sizingNyanCat = importNyanCat.getImage().getScaledInstance(100,100, java.awt.Image.SCALE_SMOOTH);
-        ImageIcon NyanCat = new ImageIcon(sizingNyanCat);
-        b2 = new JButton("Nyan Cat", NyanCat);
-        b2.setVerticalTextPosition(AbstractButton.BOTTOM);
-        b2.setHorizontalTextPosition(AbstractButton.CENTER);
-        b2.setMnemonic(KeyEvent.VK_M);
-        
-        Image sizingMouse = importMouse.getImage().getScaledInstance(100,100, java.awt.Image.SCALE_SMOOTH);
-        ImageIcon mouse = new ImageIcon(sizingMouse);
-        b3 = new JButton("Mouse", mouse);
-        b3.setVerticalTextPosition(AbstractButton.BOTTOM);
-        b3.setHorizontalTextPosition(AbstractButton.TRAILING);
-        b3.setMnemonic(KeyEvent.VK_M);
+	public Zoo() {
+		ImageIcon importNarwhal = new ImageIcon(
+				new File("images/narwhal.jpg").getAbsolutePath());
+		ImageIcon importNyanCat = new ImageIcon(
+				new File("images/NYAN_CAT.jpg").getAbsolutePath());
+		ImageIcon importMouse = new ImageIcon(
+				new File("images/mouse.jpg").getAbsolutePath());
+		ImageIcon importStingray = new ImageIcon(
+				new File("images/stingray.jpg").getAbsolutePath());
 
-        //Listen for actions on buttons 1 and 3.
-        b1.addActionListener(this);
-        b3.addActionListener(this);
+		Image sizingNarwhal = importNarwhal.getImage().getScaledInstance(100,
+				100, java.awt.Image.SCALE_SMOOTH);
+		ImageIcon narwhal = new ImageIcon(sizingNarwhal);
+		b1 = new JButton("Narwhal", narwhal);
+		b1.setVerticalTextPosition(AbstractButton.TOP);
+		b1.setHorizontalTextPosition(AbstractButton.LEADING);
+		b1.setMnemonic(KeyEvent.VK_D);
+		b1.setActionCommand("openNarwhal");
 
-        //b1.setToolTipText("Click this button to disable the middle button.");
-        //b2.setToolTipText("This middle button does nothing when you click it.");
-        //b3.setToolTipText("Click this button to enable the middle button.");
+		Image sizingNyanCat = importNyanCat.getImage().getScaledInstance(100,
+				100, java.awt.Image.SCALE_SMOOTH);
+		ImageIcon NyanCat = new ImageIcon(sizingNyanCat);
+		b2 = new JButton("Nyan Cat", NyanCat);
+		b2.setVerticalTextPosition(AbstractButton.TOP);
+		b2.setHorizontalTextPosition(AbstractButton.CENTER);
+		b2.setMnemonic(KeyEvent.VK_M);
+		b2.setActionCommand("openNyanCat");
 
-        //Add Components to this container, using the default FlowLayout.
-        add(b1);
-        add(b2);
-        add(b3);
-    }
-    //////////////////THIS IS WHERE ACTION COMMANDS ARE////////////////////////////
-    public void actionPerformed(ActionEvent e) {
-        if ("disable".equals(e.getActionCommand())) {
-            b2.setEnabled(true);
-            b1.setEnabled(true);
-            b3.setEnabled(true);
-        } else {
-            b2.setEnabled(true);
-            b1.setEnabled(true);
-            b3.setEnabled(true);
-        }
-    }
+		Image sizingMouse = importMouse.getImage().getScaledInstance(100, 100,
+				java.awt.Image.SCALE_SMOOTH);
+		ImageIcon mouse = new ImageIcon(sizingMouse);
+		b3 = new JButton("Mouse", mouse);
+		b3.setVerticalTextPosition(AbstractButton.TOP);
+		b3.setHorizontalTextPosition(AbstractButton.TRAILING);
+		b3.setMnemonic(KeyEvent.VK_M);
+		b3.setActionCommand("openMouse");
 
-    /** Returns an ImageIcon, or null if the path was invalid. */
-    protected static ImageIcon createImageIcon(String path) {
-        java.net.URL imgURL = Zoo.class.getResource(path);
-        if (imgURL != null) {
-            return new ImageIcon(imgURL);
-        } else {
-            System.err.println("Couldn't find file: " + path);
-            return null;
-        }
-    }
+		Image sizingStingray = importStingray.getImage().getScaledInstance(100,
+				100, java.awt.Image.SCALE_SMOOTH);
+		ImageIcon stingray = new ImageIcon(sizingStingray);
+		b4 = new JButton("Stingray", stingray);
+		b4.setVerticalTextPosition(AbstractButton.CENTER);
+		b4.setHorizontalTextPosition(AbstractButton.TRAILING);
+		b4.setMnemonic(KeyEvent.VK_M);
+		b4.setActionCommand("openStingray");
 
-    /**
-     * Create the GUI and show it.  For thread safety, 
-     * this method should be invoked from the 
-     * event-dispatching thread.
-     */
-    private static void createAndShowGUI() {
+		// Listen for actions on buttons 1 and 3.
+		b1.addActionListener(this);
+		b2.addActionListener(this);
+		b3.addActionListener(this);
+		b4.addActionListener(this);
 
-        //Create and set up the window.
-        JFrame frame = new JFrame("Zoo");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		// b1.setToolTipText("Click this button to disable the middle button.");
+		// b2.setToolTipText("This middle button does nothing when you click it.");
+		// b3.setToolTipText("Click this button to enable the middle button.");
 
-        //Create and set up the content pane.
-        Zoo newContentPane = new Zoo();
-        newContentPane.setOpaque(true); //content panes must be opaque
-        frame.setContentPane(newContentPane);
+		// Add Components to this container, using the default FlowLayout.
+		add(b1);
+		add(b2);
+		add(b3);
+		add(b4);
+	}
 
-        //Display the window.
-        frame.pack();
-        frame.setVisible(true);
-    }
+	// ////////////////THIS IS WHERE ACTION COMMANDS
+	// ARE////////////////////////////
+	public void actionPerformed(ActionEvent e) {
+		if ("openNarwhal".equals(e.getActionCommand())) {
+			Animal animal = new Animal();
+			animal.go();
+			animal.frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-    public static void main(String[] args) {
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                createAndShowGUI(); 
-            }
-        });
-    }
+		}
+		if ("openNyanCat".equals(e.getActionCommand())) {
+			new Cat();
+		}
+
+		if ("openMouse".equals(e.getActionCommand())) {
+			new MouseLOL().go();
+		}
+
+		if ("openStringray".equals(e.getActionCommand())) {
+
+		}
+	}
+
+	/** Returns an ImageIcon, or null if the path was invalid. */
+	protected static ImageIcon createImageIcon(String path) {
+		java.net.URL imgURL = Zoo.class.getResource(path);
+		if (imgURL != null) {
+			return new ImageIcon(imgURL);
+		} else {
+			System.err.println("Couldn't find file: " + path);
+			return null;
+		}
+	}
+
+	/**
+	 * Create the GUI and show it. For thread safety, this method should be
+	 * invoked from the event-dispatching thread.
+	 */
+	private static void createAndShowGUI() {
+
+		// Create and set up the window.
+		JFrame ZFrame = new JFrame("Zoo");
+		ZFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+		// Create and set up the content pane.
+		Zoo newContentPane = new Zoo();
+		newContentPane.setOpaque(true); // content panes must be opaque
+		ZFrame.setContentPane(newContentPane);
+
+		// Display the window.
+		ZFrame.pack();
+		ZFrame.setVisible(true);
+	}
+
+	public static void main(String[] args) {
+		// Schedule a job for the event-dispatching thread:
+		// creating and showing this application's GUI.
+		javax.swing.SwingUtilities.invokeLater(new Runnable() {
+			public void run() {
+				createAndShowGUI();
+			}
+		});
+	}
 }
