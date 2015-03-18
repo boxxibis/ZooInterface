@@ -86,7 +86,7 @@ public class Zoo extends JPanel implements ActionListener {
 		b3 = new JButton("Mouse", mouse);
 		b3.setVerticalTextPosition(AbstractButton.TOP);
 		b3.setHorizontalTextPosition(AbstractButton.TRAILING);
-		b3.setMnemonic(KeyEvent.VK_M);
+		b3.setMnemonic(KeyEvent.VK_X);
 		b3.setActionCommand("openMouse");
 
 		Image sizingStingray = importStingray.getImage().getScaledInstance(100,
@@ -95,7 +95,7 @@ public class Zoo extends JPanel implements ActionListener {
 		b4 = new JButton("Stingray", stingray);
 		b4.setVerticalTextPosition(AbstractButton.CENTER);
 		b4.setHorizontalTextPosition(AbstractButton.TRAILING);
-		b4.setMnemonic(KeyEvent.VK_M);
+		b4.setMnemonic(KeyEvent.VK_Y);
 		b4.setActionCommand("openStingray");
 
 		// Listen for actions on buttons 1 and 3.
@@ -125,15 +125,15 @@ public class Zoo extends JPanel implements ActionListener {
 
 		}
 		if ("openNyanCat".equals(e.getActionCommand())) {
-
+			new Cat();
 		}
 
 		if ("openMouse".equals(e.getActionCommand())) {
 			new MouseLOL().go();
 		}
 
-		if ("openStringray".equals(e.getActionCommand())) {
-
+		if ("openStingray".equals(e.getActionCommand())) {
+			new jstingra().go();
 		}
 	}
 
