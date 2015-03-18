@@ -1,4 +1,4 @@
-//Cameron
+//CCameron
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -15,14 +15,25 @@ class DrawPanel extends JPanel {
 
 		Graphics2D g2d = (Graphics2D) g;
 		
-		
+		g2d.setColor(new Color(0, 51, 102));
+		g2d.fillRect(0,0,2000,2000);
 		
 		//Poptart
 				g2d.setColor(new Color(254,202,162));
-				
 				g2d.fillRect(700, 175, 475, 375);
 				
+		Random rndmInt = new Random();
 				
+				for (int b = 1; b <=15; b++)
+				{
+					int q = rndmInt.nextInt(1200);
+					int w = rndmInt.nextInt(1200);
+					int red = (255);
+					int green = (255);
+					int blue =(255);
+					g.setColor(new Color(red,green,blue));
+					g.fillRect(q, w, 10, 10);
+				}
 		//Poptart Black Outline
 				
 				g2d.setColor(Color.black);
