@@ -23,15 +23,6 @@ public void start()
 	
 }
 
-public void stop() 
-{
-	
-}
-
-public void destroy() 
-{
-	
-}
 
 public void run () 
 { 
@@ -89,7 +80,7 @@ public void run ()
 	}
 	}
 	
-	
+
 
 	
 
