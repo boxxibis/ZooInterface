@@ -30,7 +30,7 @@ final public class jstingra {
 
 	}
 
-	private void go() {
+	void go() {
 
 		frame = new JFrame("Test");
 
