@@ -168,7 +168,7 @@ public class Cat extends JFrame {
 		DrawPanel dpnl = new DrawPanel();
 		add(dpnl);
 
-		setSize(800,800);
+		setSize(1600,1200);
 		setTitle("Nyan_Cat");
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
