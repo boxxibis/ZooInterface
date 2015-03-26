@@ -1,6 +1,6 @@
 /************************************************
- * This makes a Narwhal in a car with hydraulics*
- * Code by Elijah Peña                          *
+ 
+ * Code by Cameron Spencer                       *
  ************************************************/
 
 import javax.swing.*;
@@ -46,7 +46,7 @@ final public class Cat2 {
 
 		frame.setResizable(false);
 
-		frame.setSize(800, 800);
+		frame.setSize(1600, 1600);
 
 		frame.setLocation(375, 55);
 
@@ -255,7 +255,7 @@ final public class Cat2 {
 
 			try {
 
-				Thread.sleep(10);
+				Thread.sleep(30);
 
 				} catch (Exception exc) {
 				}
