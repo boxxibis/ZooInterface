@@ -123,7 +123,7 @@ final public class Cat2 {
 					for (int b = 1; b <=12; b++)
 					{
 						int x = (rndInt.nextInt(375) + 750);
-						int y = (rndInt.nextInt(250) + 225);
+						int y = (rndInt.nextInt(f + 150) + (f + 125));
 						int red = (249);
 						int green = (53);
 						int blue =(155);
