@@ -46,9 +46,9 @@ final public class Cat2 {
 
 		frame.setResizable(false);
 
-		frame.setSize(1600, 1600);
+		frame.setSize(1500, 800);
 
-		frame.setLocation(375, 55);
+		frame.setLocation(10, 10);
 
 		moveIt();
 
