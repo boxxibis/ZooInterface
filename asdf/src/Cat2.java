@@ -34,7 +34,7 @@ final public class Cat2 {
 
 	void go() {
 
-		frame = new JFrame("Narwhal");
+		frame = new JFrame("NyanCat");
 
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -118,18 +118,20 @@ final public class Cat2 {
 					g2d.fillRect(d - 25, f - 400, h - 50, j - 75);
 					
 			//Poptart Sprinkles
-					Random rndInt = new Random();
-					
-					for (int b = 1; b <=12; b++)
-					{
-						int x = (rndInt.nextInt(375) + 750);
-						int y = (rndInt.nextInt(f + 150) + (f + 125));
 						int red = (249);
 						int green = (53);
 						int blue =(155);
 						g.setColor(new Color(red,green,blue));
-						g.fillRect(x, y, 25, 25);
-					}
+						
+						g.fillRect(d+ 50, f + 150, 25, 25);
+						g.fillRect(d+ 100, f + 274, 25, 25);
+						g.fillRect(d+ 225, f + 202, 25, 25);
+						g.fillRect(d+ 300, f + 390, 25, 25);
+						g.fillRect(d+ 375, f + 336, 25, 25);
+						g.fillRect(d+ 440, f + 360, 25, 25);
+						g.fillRect(d+ 280, f + 304, 25, 25);
+						g.fillRect(d+ 390, f + 250, 25, 25);
+					
 			
 			//Head Black Outline
 					g2d.setColor(Color.black);
