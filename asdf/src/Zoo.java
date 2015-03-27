@@ -125,8 +125,7 @@ public class Zoo extends JPanel implements ActionListener {
 
 		}
 		if ("openNyanCat".equals(e.getActionCommand())) {
-			Cat cat = new Cat();
-			cat.setVisible(true);
+			 new Cat2().go();
 		}
 
 		if ("openMouse".equals(e.getActionCommand())) {
