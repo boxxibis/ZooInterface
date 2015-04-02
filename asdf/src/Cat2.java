@@ -131,6 +131,7 @@ final public class Cat2 {
 						g.fillRect(d+ 440, f + 360, 25, 25);
 						g.fillRect(d+ 280, f + 304, 25, 25);
 						g.fillRect(d+ 390, f + 250, 25, 25);
+						
 					
 			
 			//Head Black Outline

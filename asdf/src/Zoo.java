@@ -36,7 +36,10 @@ import javax.swing.JPanel;
 import javax.swing.JFrame;
 import javax.swing.ImageIcon;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.Polygon;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -125,7 +128,7 @@ public class Zoo extends JPanel implements ActionListener {
 
 		}
 		if ("openNyanCat".equals(e.getActionCommand())) {
-			 new Cat2().go();
+			new Cat2().go();
 		}
 
 		if ("openMouse".equals(e.getActionCommand())) {
@@ -166,6 +169,39 @@ public class Zoo extends JPanel implements ActionListener {
 		// Display the window.
 		ZFrame.pack();
 		ZFrame.setVisible(true);
+		class DrawPanel extends JPanel {
+			private void doDrawing(Graphics g) {
+				g.setColor(Color.GREEN);
+				g.fillRect(0, 0, 1600, 900);
+				g.setColor(Color.lightGray);
+
+				Polygon path = new Polygon();
+				path.addPoint(0, 440);
+				path.addPoint(200, 440);
+				path.addPoint(150, 220);
+				path.addPoint(170, 220);
+				path.addPoint(220, 440);
+				path.addPoint(500, 440);
+				path.addPoint(400, 220);
+				path.addPoint(430, 220);
+				path.addPoint(515, 390);
+				path.addPoint(570, 220);
+				path.addPoint(600, 220);
+				path.addPoint(550, 440);
+				path.addPoint(750, 440);
+				path.addPoint(850, 220);
+				path.addPoint(880, 220);
+				path.addPoint(780, 440);
+
+				path.addPoint(1600, 440);
+				path.addPoint(1600, 460);
+				path.addPoint(0, 460);
+
+				g.fillPolygon(path);
+
+			}
+		}
+
 	}
 
 	public static void main(String[] args) {
@@ -174,6 +210,9 @@ public class Zoo extends JPanel implements ActionListener {
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				createAndShowGUI();
+				zoohabitat ex = new zoohabitat();
+				ex.setVisible(true);
+
 			}
 		});
 	}
