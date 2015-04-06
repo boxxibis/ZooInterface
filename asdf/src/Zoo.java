@@ -54,8 +54,13 @@ import java.io.IOException;
  */
 public class Zoo extends JPanel implements ActionListener {
 	protected JButton b1, b2, b3, b4;
+	DrawPanel zooh = new DrawPanel();
+	
+
 
 	public Zoo() {
+		
+		
 		ImageIcon importNarwhal = new ImageIcon(
 				new File("images/narwhal.jpg").getAbsolutePath());
 		ImageIcon importNyanCat = new ImageIcon(
@@ -69,7 +74,7 @@ public class Zoo extends JPanel implements ActionListener {
 				100, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon narwhal = new ImageIcon(sizingNarwhal);
 		b1 = new JButton("Narwhal", narwhal);
-		b1.setVerticalTextPosition(AbstractButton.TOP);
+		b1.setVerticalTextPosition(AbstractButton.CENTER);
 		b1.setHorizontalTextPosition(AbstractButton.LEADING);
 		b1.setMnemonic(KeyEvent.VK_D);
 		b1.setActionCommand("openNarwhal");
@@ -78,7 +83,7 @@ public class Zoo extends JPanel implements ActionListener {
 				100, java.awt.Image.SCALE_SMOOTH);
 		ImageIcon NyanCat = new ImageIcon(sizingNyanCat);
 		b2 = new JButton("Nyan Cat", NyanCat);
-		b2.setVerticalTextPosition(AbstractButton.TOP);
+		b2.setVerticalTextPosition(AbstractButton.CENTER);
 		b2.setHorizontalTextPosition(AbstractButton.CENTER);
 		b2.setMnemonic(KeyEvent.VK_M);
 		b2.setActionCommand("openNyanCat");
@@ -87,7 +92,7 @@ public class Zoo extends JPanel implements ActionListener {
 				java.awt.Image.SCALE_SMOOTH);
 		ImageIcon mouse = new ImageIcon(sizingMouse);
 		b3 = new JButton("Mouse", mouse);
-		b3.setVerticalTextPosition(AbstractButton.TOP);
+		b3.setVerticalTextPosition(AbstractButton.CENTER);
 		b3.setHorizontalTextPosition(AbstractButton.TRAILING);
 		b3.setMnemonic(KeyEvent.VK_X);
 		b3.setActionCommand("openMouse");
@@ -116,6 +121,13 @@ public class Zoo extends JPanel implements ActionListener {
 		add(b2);
 		add(b3);
 		add(b4);
+	}
+	@Override
+	public void paintComponent(Graphics g) {
+
+		super.paintComponent(g);
+		zooh.doDrawing(g);
+		
 	}
 
 	// ////////////////THIS IS WHERE ACTION COMMANDS
@@ -168,39 +180,11 @@ public class Zoo extends JPanel implements ActionListener {
 
 		// Display the window.
 		ZFrame.pack();
+		ZFrame.setSize(1599,899);
 		ZFrame.setVisible(true);
-		class DrawPanel extends JPanel {
-			private void doDrawing(Graphics g) {
-				g.setColor(Color.GREEN);
-				g.fillRect(0, 0, 1600, 900);
-				g.setColor(Color.lightGray);
-
-				Polygon path = new Polygon();
-				path.addPoint(0, 440);
-				path.addPoint(200, 440);
-				path.addPoint(150, 220);
-				path.addPoint(170, 220);
-				path.addPoint(220, 440);
-				path.addPoint(500, 440);
-				path.addPoint(400, 220);
-				path.addPoint(430, 220);
-				path.addPoint(515, 390);
-				path.addPoint(570, 220);
-				path.addPoint(600, 220);
-				path.addPoint(550, 440);
-				path.addPoint(750, 440);
-				path.addPoint(850, 220);
-				path.addPoint(880, 220);
-				path.addPoint(780, 440);
-
-				path.addPoint(1600, 440);
-				path.addPoint(1600, 460);
-				path.addPoint(0, 460);
-
-				g.fillPolygon(path);
-
-			}
-		}
+		System.out.println("WasuUUUUP");
+		
+		
 
 	}
 
@@ -210,8 +194,8 @@ public class Zoo extends JPanel implements ActionListener {
 		javax.swing.SwingUtilities.invokeLater(new Runnable() {
 			public void run() {
 				createAndShowGUI();
-				zoohabitat ex = new zoohabitat();
-				ex.setVisible(true);
+				//zoohabitat ex = new zoohabitat();
+				//ex.setVisible(true);
 
 			}
 		});

@@ -8,7 +8,7 @@ import javax.swing.SwingUtilities;
 
 class DrawPanel extends JPanel {
 
-	private void doDrawing(Graphics g) {
+	void doDrawing(Graphics g) {
 		g.setColor(Color.GREEN);
 		g.fillRect(0, 0, 1600, 900);
 		g.setColor(Color.lightGray);
@@ -60,7 +60,7 @@ public class zoohabitat extends JFrame {
 		DrawPanel dpnl = new DrawPanel();
 		add(dpnl);
 
-		setSize(360, 300);
+		setSize(1600, 900);
 		setTitle("Rectangles");
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
