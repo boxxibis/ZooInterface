@@ -84,7 +84,7 @@ public class Zoo extends JPanel implements ActionListener {
 		ImageIcon NyanCat = new ImageIcon(sizingNyanCat);
 		b2 = new JButton("Nyan Cat", NyanCat);
 		b2.setVerticalTextPosition(AbstractButton.CENTER);
-		b2.setHorizontalTextPosition(AbstractButton.CENTER);
+		b2.setHorizontalTextPosition(AbstractButton.LEADING);
 		b2.setMnemonic(KeyEvent.VK_M);
 		b2.setActionCommand("openNyanCat");
 
@@ -93,7 +93,7 @@ public class Zoo extends JPanel implements ActionListener {
 		ImageIcon mouse = new ImageIcon(sizingMouse);
 		b3 = new JButton("Mouse", mouse);
 		b3.setVerticalTextPosition(AbstractButton.CENTER);
-		b3.setHorizontalTextPosition(AbstractButton.TRAILING);
+		b3.setHorizontalTextPosition(AbstractButton.LEADING);
 		b3.setMnemonic(KeyEvent.VK_X);
 		b3.setActionCommand("openMouse");
 

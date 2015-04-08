@@ -16,19 +16,19 @@ class DrawPanel extends JPanel {
 		Polygon path = new Polygon();
 		path.addPoint(0, 440);
 		path.addPoint(200, 440);
-		path.addPoint(150, 220);
-		path.addPoint(170, 220);
+		path.addPoint(500, 100);//First Path
+		path.addPoint(520, 100);//First Path
 		path.addPoint(220, 440);
 		path.addPoint(500, 440);
-		path.addPoint(400, 220);
-		path.addPoint(430, 220);
-		path.addPoint(515, 390);
-		path.addPoint(570, 220);
-		path.addPoint(600, 220);
+		path.addPoint(725, 100);//Second Path
+		path.addPoint(745, 100);//Second Path
+		path.addPoint(515, 440);
+		path.addPoint(815, 100);//Third Path
+		path.addPoint(835, 100);//Third Path
 		path.addPoint(550, 440);
 		path.addPoint(750, 440);
-		path.addPoint(850, 220);
-		path.addPoint(880, 220);
+		path.addPoint(1130, 100);//Fourth Path
+		path.addPoint(1150, 100);//Fourth Path
 		path.addPoint(780, 440);
 
 		path.addPoint(1600, 440);
