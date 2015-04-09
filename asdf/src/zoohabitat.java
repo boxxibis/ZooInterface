@@ -61,7 +61,7 @@ public class zoohabitat extends JFrame {
 		add(dpnl);
 
 		setSize(1600, 900);
-		setTitle("Rectangles");
+		setTitle("");
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
