@@ -199,6 +199,10 @@ public class Zoo extends JPanel implements ActionListener {
 			stingray29.go();
 		}
 		
+		if("openPig".equals(e.getActionCommand())) {
+			
+		}
+		
 		if ("openShark".equals(e.getActionCommand())) {
 			sharkkk.go();
 			
