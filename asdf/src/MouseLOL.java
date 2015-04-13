@@ -120,9 +120,9 @@ final public class MouseLOL<gtg> {
 
 	}
 
-	private void moveIt() {
+	void moveIt() {
 
-		while (true) {
+		//while (true) {
 
 			if (x1 >= 5) {
 
@@ -207,15 +207,15 @@ final public class MouseLOL<gtg> {
 			try {
 
 				Thread.sleep(10);
+				frame.repaint();
 
 			} catch (Exception exc) {
 			}
 
-			frame.repaint();
 
 		}
 
 	}
 
-}
+//}
 

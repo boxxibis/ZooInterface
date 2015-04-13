@@ -113,9 +113,9 @@ final public class jstingra {
 
 	}
 
-	private void moveIt() {
+	void moveIt() {
 
-		while (true) {
+		//while (true) {
 
 			if (x >= 650) {
 
@@ -176,14 +176,14 @@ final public class jstingra {
 			try {
 
 				Thread.sleep(10);
+				frame.repaint();
 
 			} catch (Exception exc) {
 			}
 
-			frame.repaint();
 
 		}
 
 	}
 
-}
+//}

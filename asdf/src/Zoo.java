@@ -53,11 +53,13 @@ import java.io.IOException;
  *   images/left.gif
  */
 public class Zoo extends JPanel implements ActionListener {
-	protected JButton b1, b2, b3, b4;
+	protected JButton b1, b2, b3, b4, b5, b6, b7, b8, b9, b10;
 	DrawPanel zooh = new DrawPanel();
 	
 	private static Cat2 cat2;
 	private static Animal narwhal3;
+	private static MouseLOL suckymouse;
+	private static jstingra stingray29;
 
 	public Zoo() {
 		
@@ -106,26 +108,51 @@ public class Zoo extends JPanel implements ActionListener {
 		b4.setHorizontalTextPosition(AbstractButton.TRAILING);
 		b4.setMnemonic(KeyEvent.VK_Y);
 		b4.setActionCommand("openStingray");
+		
+		Image sizingStingray = importStingray.getImage().getScaledInstance(100,
+				100, java.awt.Image.SCALE_SMOOTH);//Sizes image
+		ImageIcon stingray = new ImageIcon(sizingStingray);//Converts to Icon
+		b5 = new JButton("Stingray", stingray);//Uses icon
+		b5.setVerticalTextPosition(AbstractButton.CENTER);
+		b5.setHorizontalTextPosition(AbstractButton.TRAILING);
+		b5.setMnemonic(KeyEvent.VK_Y);
+		b5.setActionCommand("openStingray");
+		
+		
 
 		// Listen for actions on buttons 1 and 3.
 		b1.addActionListener(this);
 		b2.addActionListener(this);
 		b3.addActionListener(this);
 		b4.addActionListener(this);
+		b5.addActionListener(this);
+		b6.addActionListener(this);
+		b7.addActionListener(this);
+		b8.addActionListener(this);
+		b9.addActionListener(this);
+		b10.addActionListener(this);
 
 		 b1.setToolTipText("Click this button for a narwhal.");
 		 b2.setToolTipText("Click this button for a Nyan Cat.");
 		 b3.setToolTipText("Click this button for a Mouse.");
-		 
+		 b4.setToolTipText("Click this button for a stingray.");
 
 		// Add Components to this container, using the default FlowLayout.
 		add(b1);
 		add(b2);
 		add(b3);
 		add(b4);
+		add(b5);
+		add(b6);
+		add(b7);
+		add(b8);
+		add(b9);
+		add(b10);
 		
 		cat2 = new Cat2();
 		narwhal3 = new Animal();
+		suckymouse = new MouseLOL();
+		stingray29 =  new jstingra();
 		
 		new Thread(updater).start();
 		
@@ -150,11 +177,11 @@ public class Zoo extends JPanel implements ActionListener {
 		}
 
 		if ("openMouse".equals(e.getActionCommand())) {
-			new MouseLOL().go();
+			suckymouse.go();
 		}
 
 		if ("openStingray".equals(e.getActionCommand())) {
-			new jstingra().go();
+			stingray29.go();
 		}
 	}
 	
@@ -163,6 +190,8 @@ public class Zoo extends JPanel implements ActionListener {
 			while(true){
 				narwhal3.moveIt();
 				cat2.moveIt();
+				suckymouse.moveIt();
+				stingray29.moveIt();
 				
 			}
 		}

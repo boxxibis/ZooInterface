@@ -113,7 +113,7 @@ final public class Animal {
 
 	public void moveIt() {
 
-		while (true) {
+		//while (true) {
 			
 
 			/*if (k >= 375) {
@@ -171,14 +171,14 @@ final public class Animal {
 			try {
 
 				Thread.sleep(10);
+				frame.repaint();
 
 				} catch (Exception exc) {
 				}
 
-			frame.repaint();
 
 		}
 
 	}
 
-}
+//}
