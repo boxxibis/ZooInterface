@@ -72,6 +72,8 @@ public class Zoo extends JPanel implements ActionListener {
 				new File("images/mouse.jpg").getAbsolutePath());
 		ImageIcon importStingray = new ImageIcon(
 				new File("images/stingray.jpg").getAbsolutePath());
+		ImageIcon importPig = new ImageIcon(
+				new File("images/pig.jpg").getAbsolutePath());
 	
 		Image sizingNarwhal = importNarwhal.getImage().getScaledInstance(100,
 				100, java.awt.Image.SCALE_SMOOTH);//Sizes Image
@@ -109,10 +111,10 @@ public class Zoo extends JPanel implements ActionListener {
 		b4.setMnemonic(KeyEvent.VK_Y);
 		b4.setActionCommand("openStingray");
 		
-		Image sizingStingray = importStingray.getImage().getScaledInstance(100,
+		Image sizingPig = importPig.getImage().getScaledInstance(100,
 				100, java.awt.Image.SCALE_SMOOTH);//Sizes image
-		ImageIcon stingray = new ImageIcon(sizingStingray);//Converts to Icon
-		b5 = new JButton("Stingray", stingray);//Uses icon
+		ImageIcon pig = new ImageIcon(sizingPig);//Converts to Icon
+		b5 = new JButton("Pig", pig);//Uses icon
 		b5.setVerticalTextPosition(AbstractButton.CENTER);
 		b5.setHorizontalTextPosition(AbstractButton.TRAILING);
 		b5.setMnemonic(KeyEvent.VK_Y);
