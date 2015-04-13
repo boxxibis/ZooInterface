@@ -60,6 +60,7 @@ public class Zoo extends JPanel implements ActionListener {
 	private static Animal narwhal3;
 	private static MouseLOL suckymouse;
 	private static jstingra stingray29;
+	private static Shark sharkkk;
 
 	public Zoo() {
 		
@@ -74,6 +75,8 @@ public class Zoo extends JPanel implements ActionListener {
 				new File("images/stingray.jpg").getAbsolutePath());
 		ImageIcon importPig = new ImageIcon(
 				new File("images/pig.jpg").getAbsolutePath());
+		ImageIcon importShark = new ImageIcon(
+				new File("images/shark.jpg").getAbsolutePath());
 	
 		Image sizingNarwhal = importNarwhal.getImage().getScaledInstance(100,
 				100, java.awt.Image.SCALE_SMOOTH);//Sizes Image
@@ -111,14 +114,23 @@ public class Zoo extends JPanel implements ActionListener {
 		b4.setMnemonic(KeyEvent.VK_Y);
 		b4.setActionCommand("openStingray");
 		
-		Image sizingPig = importPig.getImage().getScaledInstance(100,
+		Image sizingShark = importShark.getImage().getScaledInstance(100,
 				100, java.awt.Image.SCALE_SMOOTH);//Sizes image
-		ImageIcon pig = new ImageIcon(sizingPig);//Converts to Icon
-		b5 = new JButton("Pig", pig);//Uses icon
+		ImageIcon shark = new ImageIcon(sizingShark);//Converts to Icon
+		b5 = new JButton("Shark", shark);//Uses icon
 		b5.setVerticalTextPosition(AbstractButton.CENTER);
 		b5.setHorizontalTextPosition(AbstractButton.TRAILING);
 		b5.setMnemonic(KeyEvent.VK_Y);
-		b5.setActionCommand("openStingray");
+		b5.setActionCommand("openShark");
+		
+		Image sizingPig = importPig.getImage().getScaledInstance(100,
+				100, java.awt.Image.SCALE_SMOOTH);//Sizes image
+		ImageIcon pig = new ImageIcon(sizingPig);//Converts to Icon
+		b6 = new JButton("Pig", pig);//Uses icon
+		b6.setVerticalTextPosition(AbstractButton.CENTER);
+		b6.setHorizontalTextPosition(AbstractButton.TRAILING);
+		b6.setMnemonic(KeyEvent.VK_Y);
+		b6.setActionCommand("openPig");
 		
 		
 
@@ -129,10 +141,10 @@ public class Zoo extends JPanel implements ActionListener {
 		b4.addActionListener(this);
 		b5.addActionListener(this);
 		b6.addActionListener(this);
-		b7.addActionListener(this);
+		/*b7.addActionListener(this);
 		b8.addActionListener(this);
 		b9.addActionListener(this);
-		b10.addActionListener(this);
+		b10.addActionListener(this);*/
 
 		 b1.setToolTipText("Click this button for a narwhal.");
 		 b2.setToolTipText("Click this button for a Nyan Cat.");
@@ -146,15 +158,16 @@ public class Zoo extends JPanel implements ActionListener {
 		add(b4);
 		add(b5);
 		add(b6);
-		add(b7);
+		/*add(b7);
 		add(b8);
 		add(b9);
-		add(b10);
+		add(b10);*/
 		
 		cat2 = new Cat2();
 		narwhal3 = new Animal();
 		suckymouse = new MouseLOL();
 		stingray29 =  new jstingra();
+		sharkkk =  new Shark();
 		
 		new Thread(updater).start();
 		
@@ -185,6 +198,11 @@ public class Zoo extends JPanel implements ActionListener {
 		if ("openStingray".equals(e.getActionCommand())) {
 			stingray29.go();
 		}
+		
+		if ("openShark".equals(e.getActionCommand())) {
+			sharkkk.go();
+			
+		}
 	}
 	
 	private Runnable updater = new Runnable() {
@@ -194,6 +212,7 @@ public class Zoo extends JPanel implements ActionListener {
 				cat2.moveIt();
 				suckymouse.moveIt();
 				stingray29.moveIt();
+				sharkkk.moveIt();
 				
 			}
 		}
