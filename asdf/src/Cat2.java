@@ -22,9 +22,9 @@ final public class Cat2 {
 
 	boolean down = false;
 
-	//boolean left = true;
+	// boolean left = true;
 
-	//boolean right = false;
+	// boolean right = false;
 
 	public static void main(String[] args) {
 
@@ -50,222 +50,217 @@ final public class Cat2 {
 
 		frame.setLocation(10, 10);
 
-		moveIt();
+		// moveIt();
 
 	}
 
 	class DrawPanel extends JPanel {
-		boolean hasgraphics=false;
+		boolean hasgraphics = false;
 		Car car1 = new Car();
-		//Car car1 = new Car();
+
+		// Car car1 = new Car();
 		public void paintComponent(Graphics g) {
-			
+
 			Graphics2D g2d = (Graphics2D) g;
 			System.out.println("hi");
 
-			//Variables
-			
-			int h = 100; //X-Size
-			int j = 100; //Y-Size
-			
-			
-			//Background
+			// Variables
+
+			int h = 100; // X-Size
+			int j = 100; // Y-Size
+
+			// Background
 			g2d.setColor(new Color(0, 51, 102));
-			g2d.fillRect(0,0,2000,2000);
-			//Stars
+			g2d.fillRect(0, 0, 2000, 2000);
+			// Stars
 			Random rndmInt = new Random();
-			
-			for (int b = 1; b <=25; b++)
-			{
+
+			for (int b = 1; b <= 25; b++) {
 				int q = rndmInt.nextInt(1200);
 				int w = rndmInt.nextInt(1200);
 				int red = (255);
 				int green = (255);
-				int blue =(255);
-				g.setColor(new Color(red,green,blue));
+				int blue = (255);
+				g.setColor(new Color(red, green, blue));
 				g.fillRect(q, w, 10, 10);
 			}
-			//Poptart
-					g2d.setColor(new Color(254,202,162));
-					g2d.fillRect(d, f + 75, h + 375, j + 275);
-					
-			
-			//Poptart Black Outline
-					
-					g2d.setColor(Color.black);
-					
-					g2d.fillRect(d, f + 75, h - 75, j - 75);
-					g2d.fillRect(d, f + 425, h - 75, j - 75);
-					g2d.fillRect(d - 25, f + 100, h - 75, j + 250);
-					g2d.fillRect(d + 25, f + 50, h + 325, j - 75);
-					g2d.fillRect(d + 450, f + 75, h - 75, j - 75);
-					g2d.fillRect(d + 475, f + 100, h - 75, j + 50);
-					g2d.fillRect(d + 25, f + 450, h + 200, j - 75);
-					
-			//Poptart Topping
-					g2d.setColor(new Color(255,153,255));
-					
-					g2d.fillRect(d + 25, f + 100, h + 325, j + 225);
-					
-			//Poptart (Continued)
-					g2d.setColor(new Color(254,202,162));
-					
-					g2d.fillRect(d + 25, f + 200, h - 75, j - 50);
-					g2d.fillRect(d + 25, f + 100, h - 50, j - 75);
-					g2d.fillRect(d + 400, f + 100, h - 50, j - 75);
-					g2d.fillRect(d + 425, f + 100, h - 75, j - 50);
-					g2d.fillRect(d + 25, f + 375, h - 75, j - 50);
-					g2d.fillRect(d - 25, f - 400, h - 50, j - 75);
-					
-			//Poptart Sprinkles
-						int red = (249);
-						int green = (53);
-						int blue =(155);
-						g.setColor(new Color(red,green,blue));
-						
-						g.fillRect(d+ 50, f + 150, 25, 25);
-						g.fillRect(d+ 100, f + 274, 25, 25);
-						g.fillRect(d+ 225, f + 202, 25, 25);
-						g.fillRect(d+ 300, f + 390, 25, 25);
-						g.fillRect(d+ 375, f + 336, 25, 25);
-						g.fillRect(d+ 440, f + 360, 25, 25);
-						g.fillRect(d+ 280, f + 304, 25, 25);
-						g.fillRect(d+ 390, f + 250, 25, 25);
-						
-					
-			
-			//Head Black Outline
-					g2d.setColor(Color.black);
-					
-					g2d.fillRect(d + 300, f + 175, h - 50, j + 175);
-					g2d.fillRect(d + 275, f + 200, h - 75, j + 125);
-					g2d.fillRect(d + 250, f + 300, h - 75, j); 
-					g2d.fillRect(d + 350, f + 200, h - 75, j - 75);
-					g2d.fillRect(d + 375, f + 225, h - 75, j - 75);
-					g2d.fillRect(d + 350, f + 250, h - 50, j + 75);
-					g2d.fillRect(d + 400, f + 250, h, j + 100);
-					g2d.fillRect(d + 325, f + 425, h + 150, j - 50);
-					g2d.fillRect(d + 500, f + 225, h - 50, j + 75);
-					g2d.fillRect(d + 525, f + 200, h - 75, j - 75);
-					g2d.fillRect(d + 550, f + 175, h - 50, j + 125);
-					g2d.fillRect(d + 600, f + 300, h - 50, j);
-					g2d.fillRect(d + 600, f + 200, h - 75, j);
-					g2d.fillRect(d + 600, f + 400, h - 75, j - 75);
-					g2d.fillRect(d + 575, f + 425, h - 75, j - 75);
-			//Head
-					g2d.setColor(Color.gray);
-					
-					//g2d.drawRect(1000,300,300,300);
-					g2d.fillRect(d + 300, f + 200, h - 50, j + 125);
-					g2d.fillRect(d + 275, f + 300, h - 75, j);
-					g2d.fillRect(d + 350, f + 225, h - 75, j - 75);
-					g2d.fillRect(d + 350, f + 250, h - 50, j + 75);
-					g2d.fillRect(d + 400, f + 275, h, 	   j + 50);
-					g2d.fillRect(d + 325, f + 425, h + 150, j - 75);
-					g2d.fillRect(d + 500, f + 250, h - 50, j + 75);
-					g2d.fillRect(d + 525, f + 225, h - 75, j - 75);
-					g2d.fillRect(d + 550, f + 200, h - 50, j + 125);
-					g2d.fillRect(d + 600, f + 300, h - 75, j);
-					
-			//Cheek Blush
-					g2d.setColor(Color.pink);
-					
-					g2d.fillRect(d + 300, f + 350, h - 50, j - 50);
-					g2d.fillRect(d + 575, f + 350, h - 50, j - 50);
-					
-			//Eyes
-					g2d.setColor(Color.black);
-					
-					g2d.fillRect(d + 350, f + 300, h - 50, j - 50);
-					g2d.fillRect(d + 525, f + 300, h - 50, j - 50);
-					
-					g2d.setColor(Color.white);
-					
-					g2d.fillRect(d + 350, f + 300, h - 75, j - 75);  /*Inner white*/ 
-					g2d.fillRect(d + 525, f + 300, h - 75, j - 75);  /*Inner white*/ 
-					
-			//Nose
-					g2d.setColor(Color.black);
-					
-					g2d.fillRect(d + 475, f + 325, h - 75, j - 75);
-					
-			//Mouth
-					g2d.fillRect(d + 375, f + 375, h - 75, j - 50);
-					g2d.fillRect(d + 375, f + 400, h + 75, j - 75);
-					g2d.fillRect(d + 350, f + 375, h - 75, j - 50);
-					g2d.fillRect(d + 525, f + 375, h - 75, j - 50);
-			
+			// Poptart
+			g2d.setColor(new Color(254, 202, 162));
+			g2d.fillRect(d, f + 75, h + 375, j + 275);
+
+			// Poptart Black Outline
+
+			g2d.setColor(Color.black);
+
+			g2d.fillRect(d, f + 75, h - 75, j - 75);
+			g2d.fillRect(d, f + 425, h - 75, j - 75);
+			g2d.fillRect(d - 25, f + 100, h - 75, j + 250);
+			g2d.fillRect(d + 25, f + 50, h + 325, j - 75);
+			g2d.fillRect(d + 450, f + 75, h - 75, j - 75);
+			g2d.fillRect(d + 475, f + 100, h - 75, j + 50);
+			g2d.fillRect(d + 25, f + 450, h + 200, j - 75);
+
+			// Poptart Topping
+			g2d.setColor(new Color(255, 153, 255));
+
+			g2d.fillRect(d + 25, f + 100, h + 325, j + 225);
+
+			// Poptart (Continued)
+			g2d.setColor(new Color(254, 202, 162));
+
+			g2d.fillRect(d + 25, f + 200, h - 75, j - 50);
+			g2d.fillRect(d + 25, f + 100, h - 50, j - 75);
+			g2d.fillRect(d + 400, f + 100, h - 50, j - 75);
+			g2d.fillRect(d + 425, f + 100, h - 75, j - 50);
+			g2d.fillRect(d + 25, f + 375, h - 75, j - 50);
+			g2d.fillRect(d - 25, f - 400, h - 50, j - 75);
+
+			// Poptart Sprinkles
+			int red = (249);
+			int green = (53);
+			int blue = (155);
+			g.setColor(new Color(red, green, blue));
+
+			g.fillRect(d + 50, f + 150, 25, 25);
+			g.fillRect(d + 100, f + 274, 25, 25);
+			g.fillRect(d + 225, f + 202, 25, 25);
+			g.fillRect(d + 300, f + 390, 25, 25);
+			g.fillRect(d + 375, f + 336, 25, 25);
+			g.fillRect(d + 440, f + 360, 25, 25);
+			g.fillRect(d + 280, f + 304, 25, 25);
+			g.fillRect(d + 390, f + 250, 25, 25);
+
+			// Head Black Outline
+			g2d.setColor(Color.black);
+
+			g2d.fillRect(d + 300, f + 175, h - 50, j + 175);
+			g2d.fillRect(d + 275, f + 200, h - 75, j + 125);
+			g2d.fillRect(d + 250, f + 300, h - 75, j);
+			g2d.fillRect(d + 350, f + 200, h - 75, j - 75);
+			g2d.fillRect(d + 375, f + 225, h - 75, j - 75);
+			g2d.fillRect(d + 350, f + 250, h - 50, j + 75);
+			g2d.fillRect(d + 400, f + 250, h, j + 100);
+			g2d.fillRect(d + 325, f + 425, h + 150, j - 50);
+			g2d.fillRect(d + 500, f + 225, h - 50, j + 75);
+			g2d.fillRect(d + 525, f + 200, h - 75, j - 75);
+			g2d.fillRect(d + 550, f + 175, h - 50, j + 125);
+			g2d.fillRect(d + 600, f + 300, h - 50, j);
+			g2d.fillRect(d + 600, f + 200, h - 75, j);
+			g2d.fillRect(d + 600, f + 400, h - 75, j - 75);
+			g2d.fillRect(d + 575, f + 425, h - 75, j - 75);
+			// Head
+			g2d.setColor(Color.gray);
+
+			// g2d.drawRect(1000,300,300,300);
+			g2d.fillRect(d + 300, f + 200, h - 50, j + 125);
+			g2d.fillRect(d + 275, f + 300, h - 75, j);
+			g2d.fillRect(d + 350, f + 225, h - 75, j - 75);
+			g2d.fillRect(d + 350, f + 250, h - 50, j + 75);
+			g2d.fillRect(d + 400, f + 275, h, j + 50);
+			g2d.fillRect(d + 325, f + 425, h + 150, j - 75);
+			g2d.fillRect(d + 500, f + 250, h - 50, j + 75);
+			g2d.fillRect(d + 525, f + 225, h - 75, j - 75);
+			g2d.fillRect(d + 550, f + 200, h - 50, j + 125);
+			g2d.fillRect(d + 600, f + 300, h - 75, j);
+
+			// Cheek Blush
+			g2d.setColor(Color.pink);
+
+			g2d.fillRect(d + 300, f + 350, h - 50, j - 50);
+			g2d.fillRect(d + 575, f + 350, h - 50, j - 50);
+
+			// Eyes
+			g2d.setColor(Color.black);
+
+			g2d.fillRect(d + 350, f + 300, h - 50, j - 50);
+			g2d.fillRect(d + 525, f + 300, h - 50, j - 50);
+
+			g2d.setColor(Color.white);
+
+			g2d.fillRect(d + 350, f + 300, h - 75, j - 75); /* Inner white */
+			g2d.fillRect(d + 525, f + 300, h - 75, j - 75); /* Inner white */
+
+			// Nose
+			g2d.setColor(Color.black);
+
+			g2d.fillRect(d + 475, f + 325, h - 75, j - 75);
+
+			// Mouth
+			g2d.fillRect(d + 375, f + 375, h - 75, j - 50);
+			g2d.fillRect(d + 375, f + 400, h + 75, j - 75);
+			g2d.fillRect(d + 350, f + 375, h - 75, j - 50);
+			g2d.fillRect(d + 525, f + 375, h - 75, j - 50);
+
 		}
 
 	}
 
 	public void moveIt() {
 
-		while (true) {
-			
+		// while (true) {
 
-			/*if (d >= 375) {
-				right = false;
-				left = true;
-			}
+		/*
+		 * if (d >= 375) { right = false; left = true; }
+		 * 
+		 * if (d <= 325) {
+		 * 
+		 * right = true; left = false;
+		 * 
+		 * }
+		 */
 
-			if (d <= 325) {
+		if (f >= 225) { // DELETE THIS END COMMENT WHEN DONE
 
-				right = true;
-				left = false;
+			up = true;
 
-			}*/
+			down = false;
 
-			if (f >= 225) {                    //DELETE THIS END COMMENT WHEN DONE
+		}
 
-				up = true;
+		if (f <= 175) {
 
-				down = false;
+			up = false;
 
-			}
+			down = true;
 
-			if (f <= 175) {
+		}
 
-				up = false;
+		if (up) {
 
-				down = true;
+			f--;
 
-			}
+		}
 
-			if (up) {
+		if (down) {
 
-				f--;
+			f++;
 
-			}
+		}
 
-			if (down) {
+		/*
+		 * if (left) {
+		 * 
+		 * d--;
+		 * 
+		 * }
+		 * 
+		 * if (right) {
+		 * 
+		 * d++;
+		 * 
+		 * }
+		 */
 
-				f++;
+		try {
 
-			}
-
-			/*if (left) {
-
-				d--;
-
-			}
-
-			if (right) {
-
-				d++;
-
-			}*/
-
-			try {
-
-				Thread.sleep(30);
-
-				} catch (Exception exc) {
-				}
+			Thread.sleep(30);
 
 			frame.repaint();
 
+		} catch (Exception exc) {
 		}
+
+		// }
 
 	}
 

@@ -56,7 +56,8 @@ public class Zoo extends JPanel implements ActionListener {
 	protected JButton b1, b2, b3, b4;
 	DrawPanel zooh = new DrawPanel();
 	
-
+	private static Cat2 cat2;
+	private static Animal narwhal3;
 
 	public Zoo() {
 		
@@ -112,15 +113,22 @@ public class Zoo extends JPanel implements ActionListener {
 		b3.addActionListener(this);
 		b4.addActionListener(this);
 
-		// b1.setToolTipText("Click this button to disable the middle button.");
-		// b2.setToolTipText("This middle button does nothing when you click it.");
-		// b3.setToolTipText("Click this button to enable the middle button.");
+		 b1.setToolTipText("Click this button for a narwhal.");
+		 b2.setToolTipText("Click this button for a Nyan Cat.");
+		 b3.setToolTipText("Click this button for a Mouse.");
+		 
 
 		// Add Components to this container, using the default FlowLayout.
 		add(b1);
 		add(b2);
 		add(b3);
 		add(b4);
+		
+		cat2 = new Cat2();
+		narwhal3 = new Animal();
+		
+		new Thread(updater).start();
+		
 	}
 	@Override
 	public void paintComponent(Graphics g) {
@@ -134,13 +142,11 @@ public class Zoo extends JPanel implements ActionListener {
 	// ARE////////////////////////////
 	public void actionPerformed(ActionEvent e) {
 		if ("openNarwhal".equals(e.getActionCommand())) {
-			Animal animal = new Animal();
-			animal.go();
-			animal.frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+			narwhal3.go();
 
 		}
 		if ("openNyanCat".equals(e.getActionCommand())) {
-			new Cat2().go();
+			cat2.go();
 		}
 
 		if ("openMouse".equals(e.getActionCommand())) {
@@ -151,7 +157,17 @@ public class Zoo extends JPanel implements ActionListener {
 			new jstingra().go();
 		}
 	}
-
+	
+	private Runnable updater = new Runnable() {
+		public void run() {
+			while(true){
+				narwhal3.moveIt();
+				cat2.moveIt();
+				
+			}
+		}
+	};
+	
 	/** Returns an ImageIcon, or null if the path was invalid. */
 	protected static ImageIcon createImageIcon(String path) {
 		java.net.URL imgURL = Zoo.class.getResource(path);
