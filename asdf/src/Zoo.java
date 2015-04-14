@@ -64,6 +64,8 @@ public class Zoo extends JPanel implements ActionListener {
 	private static piggy piggyyy;
 	private static puma pumaaa;
 	private static MOVINGGRADIENTBEAR bearrr;//annoying to type the type
+	private static dinothing dinooo;
+	private static Penguin penguinnn;
 	
 	public Zoo() {
 		
@@ -84,6 +86,10 @@ public class Zoo extends JPanel implements ActionListener {
 				new File("images/puma.jpg").getAbsolutePath());
 		ImageIcon importBear = new ImageIcon(
 				new File("images/bear.jpg").getAbsolutePath());
+		ImageIcon importDino = new ImageIcon(
+				new File("images/dino.jpg").getAbsolutePath());
+		ImageIcon importPenguin = new ImageIcon(
+				new File("images/penguin.jpg").getAbsolutePath());
 	
 		Image sizingNarwhal = importNarwhal.getImage().getScaledInstance(50,
 				50, java.awt.Image.SCALE_SMOOTH);//Sizes Image
@@ -150,7 +156,7 @@ public class Zoo extends JPanel implements ActionListener {
 		b7.setMnemonic(KeyEvent.VK_Y);
 		b7.setActionCommand("openPuma");
 		
-		Image sizingBear = importPuma.getImage().getScaledInstance(50,
+		Image sizingBear = importBear.getImage().getScaledInstance(50,
 				50, java.awt.Image.SCALE_SMOOTH);//Sizes image
 		ImageIcon bear = new ImageIcon(sizingBear);//Converts to Icon
 		b8 = new JButton("Bear", bear);//Uses icon
@@ -158,6 +164,24 @@ public class Zoo extends JPanel implements ActionListener {
 		b8.setHorizontalTextPosition(AbstractButton.TRAILING);
 		b8.setMnemonic(KeyEvent.VK_Y);
 		b8.setActionCommand("openBear");
+		
+		Image sizingDino = importDino.getImage().getScaledInstance(50,
+				50, java.awt.Image.SCALE_SMOOTH);//Sizes image
+		ImageIcon dino = new ImageIcon(sizingDino);//Converts to Icon
+		b9 = new JButton("Dino-Thing", dino);//Uses icon
+		b9.setVerticalTextPosition(AbstractButton.CENTER);
+		b9.setHorizontalTextPosition(AbstractButton.TRAILING);
+		b9.setMnemonic(KeyEvent.VK_Y);
+		b9.setActionCommand("openDino");
+		
+		Image sizingPenguin = importPenguin.getImage().getScaledInstance(50,
+				50, java.awt.Image.SCALE_SMOOTH);//Sizes image
+		ImageIcon penguin = new ImageIcon(sizingPenguin);//Converts to Icon
+		b10 = new JButton("Penguin", penguin);//Uses icon
+		b10.setVerticalTextPosition(AbstractButton.CENTER);
+		b10.setHorizontalTextPosition(AbstractButton.TRAILING);
+		b10.setMnemonic(KeyEvent.VK_Y);
+		b10.setActionCommand("openPenguin");
 		
 
 		// Listen for actions on buttons 1 and 3.
@@ -169,8 +193,8 @@ public class Zoo extends JPanel implements ActionListener {
 		b6.addActionListener(this);
 		b7.addActionListener(this);
 		b8.addActionListener(this);
-		/*b9.addActionListener(this);
-		b10.addActionListener(this);*/
+		b9.addActionListener(this);
+		b10.addActionListener(this);
 
 		 b1.setToolTipText("Click this button for a narwhal.");
 		 b2.setToolTipText("Click this button for a Nyan Cat.");
@@ -179,7 +203,9 @@ public class Zoo extends JPanel implements ActionListener {
 		 b5.setToolTipText("Click this button for a shark.");
 		 b6.setToolTipText("Click this button for a pig.");
 		 b7.setToolTipText("Click this button for a puma.");
-		 b8.setToolTipText("Click this button for a puma.");
+		 b8.setToolTipText("Click this button for a bear.");
+		 b9.setToolTipText("Click this button for a dino-thing.");
+		 b10.setToolTipText("Click this button for a penguin.");
 
 		// Add Components to this container, using the default FlowLayout.
 		add(b1);
@@ -190,8 +216,8 @@ public class Zoo extends JPanel implements ActionListener {
 		add(b6);
 		add(b7);
 		add(b8);
-		/*add(b9);
-		add(b10);*/
+		add(b9);
+		add(b10);
 		
 		cat2 = new Cat2();
 		narwhal3 = new Animal();
@@ -201,6 +227,8 @@ public class Zoo extends JPanel implements ActionListener {
 		piggyyy = new piggy();
 		pumaaa = new puma();
 		bearrr = new MOVINGGRADIENTBEAR();//still annoying
+		dinooo = new dinothing();
+		penguinnn = new Penguin();
 		
 		new Thread(updater).start();
 		
@@ -249,6 +277,14 @@ public class Zoo extends JPanel implements ActionListener {
 		if("openBear".equals(e.getActionCommand())) {
 			bearrr.go();
 		}
+		
+		if("openDino".equals(e.getActionCommand())) {
+			dinooo.go();
+		}
+		
+		if("openPenguin".equals(e.getActionCommand())) {
+			penguinnn.go();
+		}
 	}
 	
 	private Runnable updater = new Runnable() {
@@ -262,6 +298,8 @@ public class Zoo extends JPanel implements ActionListener {
 				piggyyy.moveIt();
 				pumaaa.moveIt();
 				bearrr.moveIt();
+				dinooo.moveIt();
+				penguinnn.moveIt();
 				
 			}
 		}
