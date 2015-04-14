@@ -61,6 +61,7 @@ public class Zoo extends JPanel implements ActionListener {
 	private static MouseLOL suckymouse;
 	private static jstingra stingray29;
 	private static Shark sharkkk;
+	private static piggy piggyyy;
 
 	public Zoo() {
 		
@@ -150,6 +151,8 @@ public class Zoo extends JPanel implements ActionListener {
 		 b2.setToolTipText("Click this button for a Nyan Cat.");
 		 b3.setToolTipText("Click this button for a Mouse.");
 		 b4.setToolTipText("Click this button for a stingray.");
+		 b5.setToolTipText("Click this button for a shark.");
+		 b6.setToolTipText("Click this button for a pig.");
 
 		// Add Components to this container, using the default FlowLayout.
 		add(b1);
@@ -168,6 +171,7 @@ public class Zoo extends JPanel implements ActionListener {
 		suckymouse = new MouseLOL();
 		stingray29 =  new jstingra();
 		sharkkk =  new Shark();
+		piggyyy = new piggy();
 		
 		new Thread(updater).start();
 		
@@ -199,13 +203,14 @@ public class Zoo extends JPanel implements ActionListener {
 			stingray29.go();
 		}
 		
-		if("openPig".equals(e.getActionCommand())) {
-			
-		}
 		
 		if ("openShark".equals(e.getActionCommand())) {
 			sharkkk.go();
 			
+		}
+		
+		if("openPig".equals(e.getActionCommand())) {
+			piggyyy.go();
 		}
 	}
 	
@@ -217,6 +222,7 @@ public class Zoo extends JPanel implements ActionListener {
 				suckymouse.moveIt();
 				stingray29.moveIt();
 				sharkkk.moveIt();
+				piggyyy.moveIt();
 				
 			}
 		}
