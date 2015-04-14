@@ -43,7 +43,7 @@ class DrawPanel extends JPanel {
 		g.fillRect(850, 40, 20, 300);//Fourth Rectangular Path
 		g.fillRect(920, 40 , 20, 230);//Fifth Rectangular Path
 		g.fillRect(1000, 40, 20, 145);//Sixth Rectangular Path
-		g.fillRect(1200, 40 , 20 , 400);
+		g.fillRect(1200, 40 , 20 , 400);//Seventh Rectangular Path
 
 	}
 
