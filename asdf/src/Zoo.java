@@ -63,6 +63,7 @@ public class Zoo extends JPanel implements ActionListener {
 	private static Shark sharkkk;
 	private static piggy piggyyy;
 	private static puma pumaaa;
+	private static MOVINGGRADIENTBEAR bearrr;//annoying to type the type
 	
 	public Zoo() {
 		
@@ -81,6 +82,8 @@ public class Zoo extends JPanel implements ActionListener {
 				new File("images/shark.jpg").getAbsolutePath());
 		ImageIcon importPuma = new ImageIcon(
 				new File("images/puma.jpg").getAbsolutePath());
+		ImageIcon importBear = new ImageIcon(
+				new File("images/bear.jpg").getAbsolutePath());
 	
 		Image sizingNarwhal = importNarwhal.getImage().getScaledInstance(50,
 				50, java.awt.Image.SCALE_SMOOTH);//Sizes Image
@@ -147,6 +150,15 @@ public class Zoo extends JPanel implements ActionListener {
 		b7.setMnemonic(KeyEvent.VK_Y);
 		b7.setActionCommand("openPuma");
 		
+		Image sizingBear = importPuma.getImage().getScaledInstance(50,
+				50, java.awt.Image.SCALE_SMOOTH);//Sizes image
+		ImageIcon bear = new ImageIcon(sizingBear);//Converts to Icon
+		b8 = new JButton("Bear", bear);//Uses icon
+		b8.setVerticalTextPosition(AbstractButton.CENTER);
+		b8.setHorizontalTextPosition(AbstractButton.TRAILING);
+		b8.setMnemonic(KeyEvent.VK_Y);
+		b8.setActionCommand("openBear");
+		
 
 		// Listen for actions on buttons 1 and 3.
 		b1.addActionListener(this);
@@ -156,8 +168,8 @@ public class Zoo extends JPanel implements ActionListener {
 		b5.addActionListener(this);
 		b6.addActionListener(this);
 		b7.addActionListener(this);
-		/*b8.addActionListener(this);
-		b9.addActionListener(this);
+		b8.addActionListener(this);
+		/*b9.addActionListener(this);
 		b10.addActionListener(this);*/
 
 		 b1.setToolTipText("Click this button for a narwhal.");
@@ -166,7 +178,8 @@ public class Zoo extends JPanel implements ActionListener {
 		 b4.setToolTipText("Click this button for a stingray.");
 		 b5.setToolTipText("Click this button for a shark.");
 		 b6.setToolTipText("Click this button for a pig.");
-		 b7.setToolTipText("Click this button for a pig.");
+		 b7.setToolTipText("Click this button for a puma.");
+		 b8.setToolTipText("Click this button for a puma.");
 
 		// Add Components to this container, using the default FlowLayout.
 		add(b1);
@@ -176,8 +189,8 @@ public class Zoo extends JPanel implements ActionListener {
 		add(b5);
 		add(b6);
 		add(b7);
-		/*add(b8);
-		add(b9);
+		add(b8);
+		/*add(b9);
 		add(b10);*/
 		
 		cat2 = new Cat2();
@@ -187,6 +200,7 @@ public class Zoo extends JPanel implements ActionListener {
 		sharkkk =  new Shark();
 		piggyyy = new piggy();
 		pumaaa = new puma();
+		bearrr = new MOVINGGRADIENTBEAR();//still annoying
 		
 		new Thread(updater).start();
 		
@@ -231,6 +245,10 @@ public class Zoo extends JPanel implements ActionListener {
 		if("openPuma".equals(e.getActionCommand())) {
 			pumaaa.go();
 		}
+		
+		if("openBear".equals(e.getActionCommand())) {
+			bearrr.go();
+		}
 	}
 	
 	private Runnable updater = new Runnable() {
@@ -243,6 +261,7 @@ public class Zoo extends JPanel implements ActionListener {
 				sharkkk.moveIt();
 				piggyyy.moveIt();
 				pumaaa.moveIt();
+				bearrr.moveIt();
 				
 			}
 		}
