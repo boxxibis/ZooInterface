@@ -16,19 +16,19 @@ class DrawPanel extends JPanel {
 		Polygon path = new Polygon();
 		path.addPoint(0, 440);
 		path.addPoint(200, 440);
-		path.addPoint(500, 100);//First Path
-		path.addPoint(520, 100);//First Path
+		path.addPoint(500, 50);//First Path
+		path.addPoint(520, 50);//First Path
 		path.addPoint(220, 440);
 		path.addPoint(500, 440);
-		path.addPoint(725, 100);//Second Path
-		path.addPoint(745, 100);//Second Path
+		path.addPoint(725, 50);//Second Path
+		path.addPoint(745, 50);//Second Path
 		path.addPoint(515, 440);
-		path.addPoint(815, 100);//Third Path
-		path.addPoint(835, 100);//Third Path
+		path.addPoint(815, 50);//Third Path
+		path.addPoint(835, 50);//Third Path
 		path.addPoint(550, 440);
 		path.addPoint(750, 440);
-		path.addPoint(1130, 100);//Fourth Path
-		path.addPoint(1150, 100);//Fourth Path
+		path.addPoint(1130, 45);//Fourth Path
+		path.addPoint(1150, 45);//Fourth Path
 		path.addPoint(780, 440);
 
 		path.addPoint(1600, 440);
@@ -36,6 +36,14 @@ class DrawPanel extends JPanel {
 		path.addPoint(0, 460);
 
 		g.fillPolygon(path);
+		
+		g.fillRect(75, 40, 20, 400);//First rectangular path
+		g.fillRect(210, 40, 20, 390);//Second Rectangular path
+		g.fillRect(470, 40, 20, 50);//Third Rectangular Path
+		g.fillRect(850, 40, 20, 300);//Fourth Rectangular Path
+		g.fillRect(920, 40 , 20, 230);//Fifth Rectangular Path
+		g.fillRect(1000, 40, 20, 145);//Sixth Rectangular Path
+		g.fillRect(1200, 40 , 20 , 400);
 
 	}
 
